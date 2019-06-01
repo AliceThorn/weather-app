@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+and tutorial by Hamza Mirza found here https://www.youtube.com/watch?v=204C9yNeOYI
+Find original Github repo here https://github.com/hamza-mirza/react-weather-app
+
 
 ## Available Scripts
 
