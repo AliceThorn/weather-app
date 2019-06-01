@@ -9,9 +9,9 @@ const API_KEY = "050210a1a2f874900dec2139fa03785f";
 
 class App extends React.Component{
   state = {
-    temperature: undefined,
     city: undefined,
     country: undefined,
+    temperature: undefined,
     humidity: undefined,
     description: undefined,
     error: undefined
@@ -25,13 +25,22 @@ class App extends React.Component{
     const data = await api_call.json();
     if (city && country){
       console.log(data);
-      this.setState = ({
-        temperature: data.main.temp,
+      this.setState  ({
         city: data.name,
         country: data.sys.country,
+        temperature: data.main.temp,
         humidity: data.main.humidity,
         description: data.weather[0].description,
         error: ""
+      });
+    }else{
+      this.setState = ({
+        city: undefined,
+        country: undefined,
+        temperature: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: "Please enter your city and country"
       });
     }
   }
@@ -42,9 +51,9 @@ render(){
     <Titles />
     <Form getWeather={ this.getWeather }/>
     <Weather
-      temperature={ this.state.temperature }
       city= { this.state.city }
       country={ this.state.country }
+      temperature={ this.state.temperature }
       humidity= { this.state.humidity }
       description= { this.state.description }
       error= { this.state.error }
